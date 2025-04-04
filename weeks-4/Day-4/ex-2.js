@@ -1,0 +1,1 @@
+////With GET method, the sent data appears in request body
