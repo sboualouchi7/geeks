@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         * {
             margin: 0;
@@ -39,11 +47,25 @@
 </head>
 <body>
     
-    <nav class="navbar">
-        <div class="navbar-brand">Salman Website</div>
-    </nav>
-    <div id="output"></div>
+    <form action="" method="GET">
+        <table>
+            <tr>
+                <td><label for="name">Name</label></td>
+                <td><input type="text" id="name" name="name"></td>
+            </tr>
+            <tr>
+                <td><label for="comments">Comments</label></td>
+                <td><textarea id="comments" name="comments"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Send"></td>
+            </tr>
+        </table>
+    </form>
 
-    <script src="json.js"></script>
+    <script src="ex-1.js"></script>
+</body>
+
+</html>
 </body>
 </html>

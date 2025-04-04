@@ -1,0 +1,1 @@
+//With GET method, the sent data appears in the browser's address bar as URL parameters
