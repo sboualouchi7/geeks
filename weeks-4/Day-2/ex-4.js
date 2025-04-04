@@ -5,9 +5,19 @@ const users = [{ firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Res
     { firstName: 'Robert', lastName: 'Hajek', role: 'Full Stack Resident' },
     { firstName: 'Wes', lastName: 'Reid', role: 'Instructor'},
     { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor'}];
-
+//1
 const welcome = 
     users.map(usr => `hello ${usr.firstName}`)
 
 console.log(welcome)
 
+//2
+
+const full = users.filter(usr=>usr.role === 'Full Stack Resident')
+console.log(full)
+
+//3
+const firsF = users
+    .filter(us=>us.role === 'Full Stack Resident')
+    .map(us =>us.firstName)
+console.log(firsF)
