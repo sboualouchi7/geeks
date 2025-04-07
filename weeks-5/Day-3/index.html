@@ -3,158 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salman</title>
+    <title>Currency Converter</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            background-color: #0c0c0c;
-            color: #f8f8f8;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             min-height: 100vh;
-            padding: 20px;
-            background-image: url('/api/placeholder/1200/800');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        
-        .container {
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 3rem;
-            margin: 20px 0;
-            color: #FFE81F;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-        
-        .btn {
-            background-color: #FFE81F;
-            color: #000;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 20px 0;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(255, 232, 31, 0.3);
-        }
-        
-        .btn:hover {
-            background-color: #e6d000;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(255, 232, 31, 0.4);
-        }
-        
-        .btn:active {
-            transform: translateY(0);
-        }
-        
-        #character-info {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 20px;
-            width: 100%;
-            max-width: 600px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-            border: 1px solid #333;
-        }
-        
-        .character-detail {
-            margin: 15px 0;
-            font-size: 1.2rem;
             display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid #333;
-        }
-        
-        .character-detail span:first-child {
-            font-weight: bold;
-            color: #FFE81F;
-        }
-        
-        .character-name {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #FFE81F;
-            border-bottom: 2px solid #FFE81F;
-            padding-bottom: 10px;
-        }
-        
-        .loading {
-            font-size: 2rem;
-            color: #FFE81F;
-            margin: 30px 0;
-            animation: pulse 1.5s infinite;
-        }
-        
-        .error-message {
-            color: #ff6b6b;
-            font-size: 1.2rem;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            background-color: rgba(255, 107, 107, 0.1);
-            border-radius: 5px;
-            margin: 20px 0;
-            border: 1px solid #ff6b6b;
         }
-        
-        @keyframes pulse {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-            100% {
-                opacity: 1;
-            }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 28px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+
+        .currency-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .currency-col {
+            flex: 1;
+        }
+
+        .switch-btn {
+            margin: 0 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .switch-btn:hover {
+            background-color: #667eea;
+            color: white;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #5a6fd5;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 18px;
+            display: none;
+        }
+
+        .result.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .spinner {
+            animation: spin 1s linear infinite;
+            font-size: 24px;
+            color: #667eea;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .error {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .error.show {
+            display: block;
+            animation: fadeIn 0.5s;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Salman</h1>
-        <button id="fetch-button" class="btn">Get Random Character</button>
-        <div id="character-info">
-            <div class="character-name">Click the button to get a character</div>
-            <div class="character-detail">
-                <span>Height:</span>
-                <span>--</span>
+        <h1>Currency Converter</h1>
+        
+        <div class="input-group">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" placeholder="Enter amount" min="0" step="0.01" value="1">
+        </div>
+        
+        <div class="currency-row">
+            <div class="currency-col">
+                <label for="from-currency">From</label>
+                <select id="from-currency"></select>
             </div>
-            <div class="character-detail">
-                <span>Gender:</span>
-                <span>--</span>
+            
+            <div class="switch-btn" id="switch-currencies">
+                <i class="fas fa-exchange-alt"></i>
             </div>
-            <div class="character-detail">
-                <span>Birth Year:</span>
-                <span>--</span>
-            </div>
-            <div class="character-detail">
-                <span>Home World:</span>
-                <span>--</span>
+            
+            <div class="currency-col">
+                <label for="to-currency">To</label>
+                <select id="to-currency"></select>
             </div>
         </div>
+        
+        <button id="convert-btn">Convert</button>
+        
+        <div class="loading" id="loading">
+            <i class="fas fa-spinner spinner"></i>
+        </div>
+        
+        <div class="result" id="result"></div>
+        
+        <div class="error" id="error"></div>
     </div>
 
-    <script src="script.js">
-
+    <script src="chellenge.js">
+       
     </script>
 </body>
 </html>
