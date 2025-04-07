@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salman</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #0c0c0c;
+            color: #f8f8f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: url('/api/placeholder/1200/800');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin: 20px 0;
+            color: #FFE81F;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        .btn {
+            background-color: #FFE81F;
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(255, 232, 31, 0.3);
+        }
+        
+        .btn:hover {
+            background-color: #e6d000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 232, 31, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        #character-info {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            border: 1px solid #333;
+        }
+        
+        .character-detail {
+            margin: 15px 0;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .character-detail span:first-child {
+            font-weight: bold;
+            color: #FFE81F;
+        }
+        
+        .character-name {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #FFE81F;
+            border-bottom: 2px solid #FFE81F;
+            padding-bottom: 10px;
+        }
+        
+        .loading {
+            font-size: 2rem;
+            color: #FFE81F;
+            margin: 30px 0;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .error-message {
+            color: #ff6b6b;
+            font-size: 1.2rem;
+            padding: 20px;
+            background-color: rgba(255, 107, 107, 0.1);
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ff6b6b;
+        }
+        
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Star Wars Characters</h1>
+        <button id="fetch-button" class="btn">Get Random Character</button>
+        <div id="character-info">
+            <div class="character-name">Click the button to get a character</div>
+            <div class="character-detail">
+                <span>Height:</span>
+                <span>--</span>
+            </div>
+            <div class="character-detail">
+                <span>Gender:</span>
+                <span>--</span>
+            </div>
+            <div class="character-detail">
+                <span>Birth Year:</span>
+                <span>--</span>
+            </div>
+            <div class="character-detail">
+                <span>Home World:</span>
+                <span>--</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js">
+
+    </script>
+</body>
+</html>
