@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giphy Search</title>
+    <style>
+       
+    </style>
 </head>
 <body>
+    <h1>Giphy Search</h1>
+    <form id="gif-form">
+        <input type="text" id="gif-search" placeholder="Enter a category..." required>
+        <button type="submit">Search</button>
+    </form>
+    
+    <button id="delete-all">DELETE ALL GIFs</button>
+    
+    <div id="gifs-container"></div>
 
-    <section>
-        <p id="info-art"></p>
-    </section>
-    <form id="formElem">
-        <input type="text" name="name" value="John">
-        <input type="text" name="surname" value="Smith">
-        <input type="submit">
-  </form>
-  
-    <script src="ex-4.js"></script>
+    <script src="challenge.js"></script>
 </body>
 </html>
