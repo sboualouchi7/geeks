@@ -5,7 +5,7 @@
         
         
         function getRandomCharacter() {
-            // Clear previous data
+            // Clear previous data d
             characterInfo.innerHTML = '<div class="loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</div>';
             
             // Generate random character id     
